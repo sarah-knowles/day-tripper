@@ -11,7 +11,7 @@ export class App extends React.Component {
     return (
       <>
 				<div>
-					<h1>today is...?</h1>
+					<h1>today is...</h1>
           {console.log(this.props.weathers)}
           {/* {this.props.weathers.find(weathers => <Weather key={weathers.id} weather={weather}/>)} shows today's weather
           {this.props.weathers.map(weathers => <WeatherForecast key={weathers.id} weather={weather}/>)} shows weather forecast */}
