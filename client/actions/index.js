@@ -1,19 +1,20 @@
 import { getWeathers } from '../apis/weathers'
 
-export const SET_WEATHER = 'SET_WEATHER'
+export const SET_WEATHERS = 'SET_WEATHER'
 
-export function setWeather (weatherNames) {
+export function setWeather (weathers) {
   return {
-    type: SET_WEATHER,
-    weatherNames
+    type: SET_WEATHERS,
+    weathers
   }
 }
 
 export function fetchWeathers() {
+  console.log('test')
   return dispatch => {
-    return getWeathers()
-      .then(weatherNames => {
-        dispatch(setWeather(weatherNames))
+    getWeathers()
+      .then(weathers => {
+        dispatch(setWeather(weathers))
         return null
       })
   }

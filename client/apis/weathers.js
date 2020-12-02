@@ -3,8 +3,9 @@ import request from 'superagent'
 const rootUrl = '/api/v1'
 
 export function getWeathers() {
-  return request.get(rootUrl + '/fruits')
+  return request.get(rootUrl + '/weathers')
     .then(res => {
-      return res.body.name
+      console.log('api calls...', res.body)
+      return res.body
     })
 }
