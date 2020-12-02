@@ -1,34 +1,28 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
-import { fetchFruits } from '../actions'
+import { fetchWeathers } from '../actions'
 
 export class App extends React.Component {
-  state = {
-    fruits: []
-  }
-
   componentDidMount () {
-    this.props.dispatch(fetchFruits())
+    this.props.dispatch(fetchWeathers())
   }
 
   render () {
     return (
-      <div className='app'>
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <ul>
-          {this.props.fruits.map(fruit => (
-            <li key={fruit}>{fruit}</li>
-          ))}
-        </ul>
-      </div>
-    )
-  }
+      <>
+				<div>
+					<h1>today is...</h1>
+          {this.props.weathers.find(weathers => <Weather key={weathers.id} weather={weather}/>)} shows today's weather
+          {this.props.weathers.map(weathers => <WeatherForecast key={weathers.id} weather={weather}/>)} shows weather forecast
+				</div>
+			</>
+		)
+	}
 }
 
 function mapStateToProps (globalState) {
   return {
-    fruits: globalState.fruits
+    weathers: globalState.weathers
   }
 }
 
