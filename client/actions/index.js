@@ -1,19 +1,19 @@
-import { getFruits } from '../apis/fruits'
+import { getWeathers } from '../apis/weathers'
 
-export const SET_FRUITS = 'SET_FRUITS'
+export const SET_WEATHER = 'SET_WEATHER'
 
-export function setFruits (fruits) {
+export function setWeather (weatherNames) {
   return {
-    type: SET_FRUITS,
-    fruits
+    type: SET_WEATHER,
+    weatherNames
   }
 }
 
-export function fetchFruits () {
+export function fetchWeathers() {
   return dispatch => {
-    return getFruits()
-      .then(fruits => {
-        dispatch(setFruits(fruits))
+    return getWeathers()
+      .then(weatherNames => {
+        dispatch(setWeather(weatherNames))
         return null
       })
   }
