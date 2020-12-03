@@ -1,14 +1,67 @@
-body {
-  background-color: #808b68;
-  color: white;
-  font-size: 3.5rem;
-  font-family: "Poppins", sans-serif;
-  text-align: center;
+._3Cuo5EydRIqNkUgDvz2JJl {
+  position: relative;
+  min-height: 300px;
+  max-height: 800px;
+  overflow: hidden;
+  margin-bottom: 500px;
 }
 
-h1 {
-  padding-top: 250px;
+/* Style the video: 100% width and height to cover the entire window */
+._1nQ2ny-UkgR9ui2HP0X9LF {
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
+
+/* Add some content at the bottom of the video/page */
+._3i_0ZDRJirBOIXeXI6eYvG {
+  position: absolute;
+  top: 0;
+  color: #f1f1f1;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+._1FiuTqhfxN79zYJS3GOTFP {
+  text-align: center;
+  padding: 10px;
+}
+
+._1FiuTqhfxN79zYJS3GOTFP p {
+  color: #eeeeeead;
+  font-size: 1.3rem;
+}
+
+._1FiuTqhfxN79zYJS3GOTFP button {
+  font-weight: bold;
+  margin-top: 30px;
+  color: #f1f1f1;
+  border: #f1f1f1 1px solid;
+  padding: 10px 5px;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 1.25rem;
+  border-radius: 5px;
+}
+
+._1FiuTqhfxN79zYJS3GOTFP button:hover {
+  background-color: #f1f1f1;
+  color: #000000c0;
+}
+
+._1FiuTqhfxN79zYJS3GOTFP img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto;
+  border: #f1f1f1 1px solid;
+}
+
 
 body {
   background-color: #808b68;
@@ -18,14 +71,13 @@ body {
   text-align: center;
   overflow-x: hidden;
 }
-
 body::-webkit-scrollbar {
   display: none;
 }
 h1 {
-  padding-top: 250px;
+  padding-top: 150px;
 }
- #weather {
+#weather {
   font-size: 4.5rem;
   padding-top: 25px;
 }
@@ -44,7 +96,7 @@ h1 {
   top: 80%;
   transform: translate(-50%, -50%);
 }
-#more-arrows {
+ #more-arrows {
   color: white;
   width: 75px;
   height: 65px;
@@ -77,17 +129,17 @@ polygon.arrow-top {
   justify-content: space-around;
   text-align: center;
 }
-.image {
+ .image {
   width: 200px;
   height: 200px;
 }
-.page {
+ .page {
   margin-left: 33%;
   text-align: center;
   width: 33%;
   height: auto;
 }
-.frame {
+ .frame {
   width: 300px;
   height: 250px;
   border: 3px solid #ccc;
@@ -121,5 +173,9 @@ polygon.arrow-top {
   text-align: right;
 }
 
-/*# sourceMappingURL=styles.css.map*/
+.centered {
+  margin-top: -500px;
+  z-index: 3;
+}
 
+/*# sourceMappingURL=styles.css.map*/

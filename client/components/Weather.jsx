@@ -25,8 +25,8 @@ export class Weather extends React.Component {
         return (
             <>
                 <div className='centered'>
-                    <h1 id='weather'>
-                        today is...  </h1>
+                    {/* <h1 id='weather'>
+                        today is...  </h1> */}
                         <h3>{conditionToday}</h3>
                    
                 </div>
