@@ -1,3 +1,65 @@
+._3Cuo5EydRIqNkUgDvz2JJl {
+  position: relative;
+  min-height: 300px;
+  max-height: 800px;
+  overflow: hidden;
+  margin-bottom: 500px;
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+._1nQ2ny-UkgR9ui2HP0X9LF {
+  width: 100%;
+  height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+._3i_0ZDRJirBOIXeXI6eYvG {
+  position: absolute;
+  top: 0;
+  color: #f1f1f1;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+._1FiuTqhfxN79zYJS3GOTFP {
+  text-align: center;
+  padding: 10px;
+}
+
+._1FiuTqhfxN79zYJS3GOTFP p {
+  color: #eeeeeead;
+  font-size: 1.3rem;
+}
+
+._1FiuTqhfxN79zYJS3GOTFP button {
+  font-weight: bold;
+  margin-top: 30px;
+  color: #f1f1f1;
+  border: #f1f1f1 1px solid;
+  padding: 10px 5px;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 1.25rem;
+  border-radius: 5px;
+}
+
+._1FiuTqhfxN79zYJS3GOTFP button:hover {
+  background-color: #f1f1f1;
+  color: #000000c0;
+}
+
+._1FiuTqhfxN79zYJS3GOTFP img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto;
+  border: #f1f1f1 1px solid;
+}
 body {
   background-color: #808b68;
   color: white;

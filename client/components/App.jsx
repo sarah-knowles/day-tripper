@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 import { fetchWeathers } from '../actions'
 
 import Weather from './Weather'
-
+import BackgroundVideo from './BackgroundVideo'
+import BackGroundVideo from './BackgroundVideo'
 export class App extends React.Component {
   componentDidMount () {
     this.props.dispatch(fetchWeathers())
@@ -15,7 +16,8 @@ export class App extends React.Component {
     return (
       <>
     
-				<div>
+        <div>
+        <BackGroundVideo />
 					<h1>today is...</h1>
           {console.log(this.props.weathers.map(el => el))}
           <Weather/>
