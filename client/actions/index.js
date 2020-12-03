@@ -1,6 +1,8 @@
 import { getWeathers } from '../apis/weathers'
+// import {conditionToday} from '../components/Weather'
 
-export const SET_WEATHERS = 'SET_WEATHER'
+export const SET_WEATHERS = 'SET_WEATHERS'
+export const SET_BACKGROUND = 'SET_BACKGROUND'
 
 export function setWeather (weathers) {
   return {
@@ -9,8 +11,15 @@ export function setWeather (weathers) {
   }
 }
 
+// export function setBackground(conditionToday) {
+//   return {
+//     type: SET_BACKGROUND,
+//     background: conditionToday
+//   }
+// }
+
 export function fetchWeathers() {
-  console.log('test')
+  //console.log('test')
   return dispatch => {
     getWeathers()
       .then(weathers => {
@@ -19,3 +28,9 @@ export function fetchWeathers() {
       })
   }
 }
+
+// export function fetchBackground() {
+//   return dispatch => {
+//     dispatch(setBackground(conditionToday))
+//   }
+// }
