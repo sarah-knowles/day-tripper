@@ -6,15 +6,24 @@
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
 
   <title>Day Tripper</title>
   
 </head>
 <body>
-  <div id='nav'></div>
-  <div id="app"></div>
+  <div id='nav-container'>
+  <div id='navbar'>
+  
+    <div class="g-signin2" data-onsuccess="onSignIn">
+
+    </div>
+  </div>
+  </div>
+  <div id="app">
 
   <script src="/bundle.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
 
 </html>

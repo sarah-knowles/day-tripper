@@ -15,3 +15,16 @@ h1 {
   font-size: 4.5rem;
   padding-top: 25px;
 }
+
+
+#navbar{
+  transform: translateY(-150%);
+}
+
+.nav-container:hover #navbar {
+  transform: translateY(0); 
+}
+
+.g-signin2 {
+  text-align: right;
+}

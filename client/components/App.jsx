@@ -2,32 +2,45 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchWeathers } from '../actions'
-
+import Video from './Video'
+import Trips from './Trips'
 import Weather from './Weather'
 
+
 export class App extends React.Component {
-  componentDidMount () {
+  componentDidMount() {
     this.props.dispatch(fetchWeathers())
   }
 
-  render () {
+  render() {
     // const today = this.props.weathers.shift()
     return (
       <>
-    
-				<div>
-					<h1>today is...</h1>
-          {console.log(this.props.weathers.map(el => el))}
-          <Weather/>
-         
-				</div> 
-			</>
-		)
-	}
+
+        <Weather>
+          <Video />
+        </Weather>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <Trips />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </>
+    )
+  }
 }
 
-function mapStateToProps (globalState) {
-  let {consolidated_weather = []} = globalState.weathers
+function mapStateToProps(globalState) {
+  let { consolidated_weather = [] } = globalState.weathers
   //console.log(consolidated_weather)
   return {
     weathers: consolidated_weather

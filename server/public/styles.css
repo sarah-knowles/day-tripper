@@ -3,16 +3,56 @@ body {
   color: white;
   font-size: 3.5rem;
   font-family: "Poppins", sans-serif;
+  margin: 0;
+  overflow-x: hidden;
   text-align: center;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 h1 {
-  padding-top: 250px;
+  padding-top: 200px;
+  z-index: 2;
+}
+
+h3 {
+  font-size: 5rem;
+  margin: 0%;
+ padding-top: 50px;
 }
 
 #weather {
-  font-size: 4.5rem;
+  font-size: 5rem;
   padding-top: 25px;
 }
 
-/*# sourceMappingURL=styles.css.map*/
+#navbar {
+  transform: translateY(-150%);
+}
+
+.nav-container:hover #navbar {
+  transform: translateY(0);
+}
+
+.g-signin2 {
+  text-align: right;
+}
+
+
+.fullscreen-video-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.centered {
+  font-size: 5rem;
+  margin-top: 0%;
+  padding-top: 100px;
+}
