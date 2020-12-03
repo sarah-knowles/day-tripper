@@ -5,13 +5,43 @@ export class Trips extends React.Component {
   render() {
     return (
       <>
-      <h3>things to do ...</h3>
+        <h3>things to do ...</h3>
+
+
+        <div class="wrapper">
+          <div class="item">
+            <a href="">
+              <div class="frame">
+                <img class="image" src="" />
+                <div class="caption"><a class="link" href="">Trip 1</a>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="">
+              <div class="frame">
+                <img class="image" src="" />
+                <div class="caption"><a class="link" href="">Trip 2</a>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item">
+            <a href="">
+              <div class="frame">
+                <img class="image" src="" />
+                <div class="caption"><a class="link" href="">Trip 3</a>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>  
           {/* map = new google.maps.Map(document.createElement('div'));
 
            this.googlePlaces = new google.maps.places.PlacesService(map);
            this.googlePlaces.getDetails(request, callback); */}
       </>
-
     )
   }
 

@@ -3,28 +3,109 @@ body {
   color: white;
   font-size: 3.5rem;
   font-family: "Poppins", sans-serif;
-  margin: 0;
-  overflow-x: hidden;
   text-align: center;
+}
+
+h1 {
+  padding-top: 250px;
+}
+
+body {
+  background-color: #808b68;
+  color: white;
+  font-size: 3.5rem;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
   display: none;
 }
-
 h1 {
-  padding-top: 200px;
-  z-index: 2;
+  padding-top: 250px;
 }
-
-h3 {
-  font-size: 5rem;
-  margin: 0%;
- padding-top: 50px;
+ #weather {
+  font-size: 4.5rem;
+  padding-top: 25px;
+}
+#navbar {
+  transform: translateY(-150%);
+}
+.nav-container:hover #navbar {
+  transform: translateY(0);
+}
+.g-signin2 {
+  text-align: right;
+}
+.arrow {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+}
+#more-arrows {
+  color: white;
+  width: 75px;
+  height: 65px;
+}
+polygon:hover {
+  fill: #FFF;
+  transition: all 0.2s ease-out;
+}
+polygon.arrow-bottom:hover {
+  transform: translateY(-18px);
+}
+polygon.arrow-middle:hover {
+  transform: translateY(1px);
+}
+polygon.arrow-top:hover {
+  transform: translateY(18px);
+}
+polygon {
+  fill: #FFF;
+  transition: all 0.2s ease-out;
+}
+polygon.arrow-middle {
+  opacity: 0.75;
+}
+polygon.arrow-top {
+  opacity: 0.5;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.image {
+  width: 200px;
+  height: 200px;
+}
+.page {
+  margin-left: 33%;
+  text-align: center;
+  width: 33%;
+  height: auto;
+}
+.frame {
+  width: 300px;
+  height: 250px;
+  border: 3px solid #ccc;
+  background: #e2dedc;
+  margin: auto;
+  padding: 15px 10px;
+}
+.caption {
+  color: darkcyan;
+  font-size: 1rem;
+}
+.link {
+  color: darkcyan;
+  font-size: 1rem;
 }
 
 #weather {
-  font-size: 5rem;
+  font-size: 4.5rem;
   padding-top: 25px;
 }
 
@@ -40,19 +121,5 @@ h3 {
   text-align: right;
 }
 
+/*# sourceMappingURL=styles.css.map*/
 
-.fullscreen-video-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-}
-
-.centered {
-  font-size: 5rem;
-  margin-top: 0%;
-  padding-top: 100px;
-}
