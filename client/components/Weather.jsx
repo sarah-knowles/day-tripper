@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchWeathers } from '../actions/index'
@@ -45,4 +46,3 @@ function mapStateToProps(globalState) {
     }
 }
 
-export default connect(mapStateToProps)(Weather)
