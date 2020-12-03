@@ -1,10 +1,18 @@
-
 body {
-  font-size: 4.5rem;
-  font-family: 'Poppins', sans-serif;
+  background-color: #808b68;
+  color: white;
+  font-size: 3.5rem;
+  font-family: "Poppins", sans-serif;
   text-align: center;
 }
 
 h1 {
   padding-top: 250px;
 }
+
+#weather {
+  font-size: 4.5rem;
+  padding-top: 25px;
+}
+
+/*# sourceMappingURL=styles.css.map*/
