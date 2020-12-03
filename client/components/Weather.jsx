@@ -1,7 +1,8 @@
+
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchWeathers } from '../actions/index'
-import {fetchBackground} from '../actions/index'
+//import { fetchBackground } from '../actions/index'
 
 
 export class Weather extends React.Component {
@@ -24,18 +25,17 @@ export class Weather extends React.Component {
         const conditionToday = this.weatherCategory()
         return (
             <>
-              
-                {/* <video id='myVideo' autoplay controls height='100%' width='100%' muted src={'https://www.youtube.com/watch?v=DGIXT7ce3vQ'} /> */}
                 <div className='centered'>
-                <h1 id='weather'>
-                    {conditionToday}
-                </h1>
+                    <h1 id='weather'>
+                        today is...  </h1>
+                        <h3>{conditionToday}</h3>
+                   
                 </div>
-        
             </>
         )
     }
 }
+
 
 
 function mapStateToProps(globalState) {
@@ -46,4 +46,3 @@ function mapStateToProps(globalState) {
     }
 }
 
-export default connect(mapStateToProps)(Weather)
