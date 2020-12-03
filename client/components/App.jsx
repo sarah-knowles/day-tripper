@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchWeathers } from '../actions'
@@ -6,12 +5,28 @@ import { fetchWeathers } from '../actions'
 import Weather from './Weather'
 import Trips from './Trips'
 import BackGroundVideo from './BackgroundVideo'
-
+import { loadClient, execute } from '../apis/google'
 
 
 export class App extends React.Component {
   componentDidMount () {
     this.props.dispatch(fetchWeathers())
+    const embedcode = `<script>
+      (function() {
+        var cx = '013626029654558379071:ze3tw4csia4';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    <gcse:search></gcse:search>`
+
+  $('#gsearch').html(embedcode)
+  //https://www.googleapis.com/customsearch/v1?key=YOUR_API_KEY&cx=YOUR_SEARCH_ENGINE_ID&q=YOUR_QUERY
+    
   }
 
   render () {
@@ -22,7 +37,7 @@ export class App extends React.Component {
         <div>
         <BackGroundVideo />
 				
-          {console.log(this.props.weathers.map(el => el))}
+          {/* {console.log(this.props.weathers.map(el => el))} */}
           <Weather/>
           <br />
           <br />
@@ -43,8 +58,8 @@ export class App extends React.Component {
           <br />
           <br />
           <br />
-          <br />
-  
+          <div id='gsearch'>
+</div>
           <Trips />
           <br />
           <br />
