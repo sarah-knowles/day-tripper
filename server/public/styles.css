@@ -148,10 +148,6 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-h1 {
-  padding-top: 250px;
-}
-
 #weather {
   font-size: 4.5rem;
   padding-top: 25px;
@@ -251,7 +247,6 @@ polygon.arrow-top {
 
 #weather {
   font-size: 4.5rem;
-  padding-top: 25px;
 }
 
 #navbar {
@@ -266,10 +261,10 @@ polygon.arrow-top {
   text-align: right;
 }
 
-
 #gsearch {
   visibility: hidden;
 }
-/*# sourceMappingURL=styles.css.map*/
+
+
 
 /*# sourceMappingURL=styles.css.map*/

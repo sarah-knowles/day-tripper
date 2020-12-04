@@ -58,8 +58,6 @@ export class App extends React.Component {
           <br />
           <br />
           <br />
-          <div id='gsearch'>
-</div>
           <Trips />
           <br />
           <br />
