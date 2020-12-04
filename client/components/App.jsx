@@ -5,27 +5,34 @@ import { fetchWeathers } from '../actions'
 import Weather from './Weather'
 import Trips from './Trips'
 import BackGroundVideo from './BackgroundVideo'
-import { loadClient, execute } from '../apis/google'
+import { getSearch } from '../apis/weathers'
+//import { loadClient, execute } from '../apis/google'
 
 
 export class App extends React.Component {
   componentDidMount () {
     this.props.dispatch(fetchWeathers())
-    const embedcode = `<script>
-      (function() {
-        var cx = '013626029654558379071:ze3tw4csia4';
-        var gcse = document.createElement('script');
-        gcse.type = 'text/javascript';
-        gcse.async = true;
-        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(gcse, s);
-      })();
-    </script>
-    <gcse:search></gcse:search>`
+    if (this.props.weathers !== '')
+    getSearch(this.props.weathers.consolidated_weather)
+   
+// create string here
 
-  $('#gsearch').html(embedcode)
-  //https://www.googleapis.com/customsearch/v1?key=YOUR_API_KEY&cx=YOUR_SEARCH_ENGINE_ID&q=YOUR_QUERY
+  
+  //Hidden google search bar
+    //   const embedcode = `<script>
+  //     (function() {
+  //       var cx = '013626029654558379071:ze3tw4csia4';
+  //       var gcse = document.createElement('script');
+  //       gcse.type = 'text/javascript';
+  //       gcse.async = true;
+  //       gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  //       var s = document.getElementsByTagName('script')[0];
+  //       s.parentNode.insertBefore(gcse, s);
+  //     })();
+  //   </script>
+  //   <gcse:search></gcse:search>`
+
+  // $('#gsearch').html(embedcode)
     
   }
 
@@ -70,9 +77,12 @@ export class App extends React.Component {
 	}
 }
 
-function mapStateToProps (globalState) {
+function mapStateToProps(globalState) {
+
   let {consolidated_weather = []} = globalState.weathers
-  //console.log(consolidated_weather)
+ 
+  console.log('globalState', globalState)
+  console.log('globalweather', globalState.weathers.consolidated_weather)
   return {
     weathers: consolidated_weather
   }

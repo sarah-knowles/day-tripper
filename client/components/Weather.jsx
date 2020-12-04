@@ -5,10 +5,10 @@ import { fetchWeathers } from '../actions/index'
 
 
 export class Weather extends React.Component {
-    componentDidMount() {
-        this.props.dispatch(fetchWeathers())
+   // componentDidMount() {
+    //    this.props.dispatch(fetchWeathers())
         //this.props.dispatch(fetchBackground()
-    }
+    //}
 
     weatherCategory = () => {
         if (this.props.weatherToday == 'hc' || 's') {
@@ -19,6 +19,9 @@ export class Weather extends React.Component {
             return 'awful'
         } else console.log('Broken')
     }
+
+
+
 
     render() {
         const conditionToday = this.weatherCategory()
