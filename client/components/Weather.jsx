@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchWeathers } from '../actions/index'
@@ -26,8 +25,8 @@ export class Weather extends React.Component {
         return (
             <>
                 <div className='centered'>
-                    <h1 id='weather'>
-                        today is...  </h1>
+                    {/* <h1 id='weather'>
+                        today is...  </h1> */}
                         <h3>{conditionToday}</h3>
                    
                 </div>
@@ -46,3 +45,4 @@ function mapStateToProps(globalState) {
     }
 }
 
+export default connect(mapStateToProps)(Weather)

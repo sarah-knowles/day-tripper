@@ -8,30 +8,30 @@ export class Trips extends React.Component {
         <h3>things to do ...</h3>
 
 
-        <div class="wrapper">
-          <div class="item">
+        <div className="wrapper">
+          <div className="item">
             <a href="">
-              <div class="frame">
-                <img class="image" src="" />
-                <div class="caption"><a class="link" href="">Trip 1</a>
+              <div className="frame">
+                <img className="image" src="" />
+                <div className="caption"><a className="link" href="">Trip 1</a>
                 </div>
               </div>
             </a>
           </div>
-          <div class="item">
+          <div className="item">
             <a href="">
-              <div class="frame">
-                <img class="image" src="" />
-                <div class="caption"><a class="link" href="">Trip 2</a>
+              <div className="frame">
+                <img className="image" src="" />
+                <div className="caption"><a className="link" href="">Trip 2</a>
                 </div>
               </div>
             </a>
           </div>
-          <div class="item">
+          <div className="item">
             <a href="">
-              <div class="frame">
-                <img class="image" src="" />
-                <div class="caption"><a class="link" href="">Trip 3</a>
+              <div className="frame">
+                <img className="image" src="" />
+                <div className="caption"><a className="link" href="">Trip 3</a>
                 </div>
               </div>
             </a>

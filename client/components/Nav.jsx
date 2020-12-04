@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { connect } from 'react-redux'
 
@@ -59,4 +58,3 @@ onSignIn()
 
 // currentTime(); 
 // export default connect(mapStateToProps)(Nav)
-
