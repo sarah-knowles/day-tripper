@@ -1,9 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchWeathers } from '../actions'
+
 import Weather from './Weather'
 import Trips from './Trips'
 import BackGroundVideo from './BackgroundVideo'
+import Map from './Map'
 import { getSearch } from '../apis/weathers'
 //import { loadClient, execute } from '../apis/google'
 
@@ -49,6 +51,7 @@ export class App extends React.Component {
           <br />
           <br />
         </div>
+        <Map />
       </>
     )
   }
