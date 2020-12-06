@@ -14,12 +14,12 @@ server.get('/api/v1/weathers', (req, res) => {
 })
 
 
-// server.get('/api/v1/google', (req, res) => {
-// 	request
-// 	.get('')
-// 		.then(response => res.json(response.body))
-// 		console.log(response.body)
-// })
+server.get('/api/v1/google', (req, res) => {
+	request
+	.get('')
+		.then(response => res.json(response.body))
+		console.log(response.body)
+})
 
 
 module.exports = server

@@ -10,7 +10,7 @@ export class Trips extends React.Component {
 
         <div className="wrapper">
           <div className="item">
-            <a href="">
+            <a href="{}">
               <div className="frame">
                 <img className="image" src=""/>
                 <div className="caption"><a className="link" href="">Trip 1</a>

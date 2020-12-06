@@ -1,7 +1,7 @@
 import request from 'superagent'
 
 const rootUrl = '/api/v1'
-const googleURL = 'https://www.googleapis.com/customsearch/v1?key=[OUR_API_KEY]&cx=b03569b1cf26aa1b9&q='
+//const googleURL = '?key=AIzaSyCQp5vJIqasej3dl1FEkkjmvuXYzT2hk9w&cx=b03569b1cf26aa1b9&q='
 
 
 export function getWeathers() {
@@ -12,12 +12,24 @@ export function getWeathers() {
   }
 
 
-export function getSearch(code) {
-console.log("code", code )
+export function getSearch(weatherCode) {
+//console.log("code", weatherCode )
+
+// if (weatherCode == 'hc' || 's') {
+//   return 'good'
+// } else if (weatherCode == 'lc' || 'c') {
+//   return 'ok'
+// } else if (weatherCode == 'h' || 't' || 'hr') {
+//   return 'awful'
+// } else console.log('Broken')
+
+
 //function to build a url using the URL plus search term
-  return request.get(googleURL)
+return request
+  .get('https://www.googleapis.com/customsearch/v1?key=AIzaSyCQp5vJIqasej3dl1FEkkjmvuXYzT2hk9w&gl=NZ&cx=b03569b1cf26aa1b9&q=' + 'beach') 
     .then(res => {
-      console.log(res.body)
+      console.log(res)
       return res.body
     })
-}  
+
+  }
