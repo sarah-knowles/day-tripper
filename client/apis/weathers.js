@@ -29,11 +29,11 @@ export function getSearch(weatherCode) {
 //console.log("code", weatherCode )
 
 // if (weatherCode == 'hc' || 's') {
-//   return 'good'
+//   return 'cinema'
 // } else if (weatherCode == 'lc' || 'c') {
-//   return 'ok'
+//   return 'park'
 // } else if (weatherCode == 'h' || 't' || 'hr') {
-//   return 'awful'
+//   return 'go back to bed!'
 // } else console.log('Broken')
 
 
