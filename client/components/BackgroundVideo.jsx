@@ -45,7 +45,7 @@ componentDidMount() {
 
         <div className={classes.Content}>
           <div className={classes.SubContent} >
-            <h1>today is...{this.props.weatherCode}</h1>
+            <h1 style={{ marginTop:'-200px' }}>today is ...{this.props.weatherCode}</h1>
           </div>
         </div>
       </div>

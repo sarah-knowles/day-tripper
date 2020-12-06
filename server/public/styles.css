@@ -131,8 +131,8 @@ body {
   text-align: center;
 }
 
-h1 {
-  padding-top: 80px;
+h3 {
+  margin-top: -150px;
 }
 
 body {
@@ -212,6 +212,7 @@ polygon.arrow-top {
   display: flex;
   justify-content: space-around;
   text-align: center;
+  margin-top: 75px;
 }
 
 .image {
@@ -263,6 +264,12 @@ polygon.arrow-top {
 
 #gsearch {
   visibility: hidden;
+}
+
+.centered {
+  margin-top: -800px;
+  position: relative;
+  z-index: 5;
 }
 
 /*# sourceMappingURL=styles.css.map*/

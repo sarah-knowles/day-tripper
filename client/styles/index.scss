@@ -70,8 +70,13 @@ body {
 }
 
 h1 {
-  padding-top:80px;
+  // padding-top: -250px !important;
 }
+
+h3 {
+  margin-top: -150px;
+}
+
 
 body {
   background-color: #000000;
@@ -158,6 +163,7 @@ polygon.arrow-top {
   display: flex;
   justify-content: space-around;
   text-align: center;
+  margin-top: 75px;
 }
 
 
@@ -215,4 +221,11 @@ polygon.arrow-top {
 #gsearch {
   visibility: hidden;
 }
+
+.centered {
+  margin-top: -800px;
+  position: relative;
+  z-index: 5;
+}
+
 /*# sourceMappingURL=styles.css.map*/
