@@ -32,26 +32,29 @@ export class App extends React.Component {
           <br />
           <br />
           <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <div className='arrow'>
-            <svg id="more-arrows">
-              <polygon className="arrow-bottom" points="37.6,64 0,36.1 5.1,32.8 37.6,56.8 70.4,32.8 75.5,36.1 " />
-            </svg>
-          </div>
-          <br />
-          <br />
-          <Trips />
-          <br />
-          <br />
-          <br />
         </div>
+        <div className='arrow'>
+          <svg id="more-arrows">
+            <polygon className="arrow-bottom" points="37.6,64 0,36.1 5.1,32.8 37.6,56.8 70.4,32.8 75.5,36.1 " />
+          </svg>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <Trips />
+        <br />
+        <br />
+        <br />
       </>
     )
   }
+}
+
+
+//On page reload, scrolls to the top
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
 }
 
 function mapStateToProps(globalState) {

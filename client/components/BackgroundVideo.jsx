@@ -5,9 +5,9 @@ import { fetchWeathers } from '../actions/index'
 
 export class BackgroundVideo extends React.Component {
 
-componentDidMount() {
+  componentDidMount() {
     this.props.dispatch(fetchWeathers())
-}
+  }
 
 
   assignCondition = () => {
@@ -24,13 +24,13 @@ componentDidMount() {
     if (conditionToday == 'lc' || 'c') {
       return 'videos/sunny.mp4'
     }
-    else if (conditionToday == 'hc' || 's') { 
-     return 'videos/video.mp4'}
-    else if (conditionToday == 'h' || 't' || 'hr') {
-        return 'https://cdn.videvo.net/videvo_files/video/free/2014-12/small_watermarked/Raindrops_Videvo_preview.webm'
+    else if (conditionToday == 'hc' || 's') {
+      return 'videos/video.mp4'
+    } else if (conditionToday == 'h' || 't' || 'hr') {
+       return 'https:/ / cdn.videvo.net / videvo_files / video / free / 2014 - 12 / small_watermarked / Raindrops_Videvo_preview.webm'
     };
   }
-  
+
   render() {
     const conditionToday = this.assignCondition()
     const videoToday = this.assignVideo(conditionToday)
@@ -45,13 +45,13 @@ componentDidMount() {
 
         <div className={classes.Content}>
           <div className={classes.SubContent} >
-            <h1>today is...{this.props.weatherCode}</h1>
+            <h1 style={{ marginTop: '-200px' }}>today is ...{this.props.weatherCode}</h1>
           </div>
         </div>
       </div>
-      )
-    }
-  
+    )
+  }
+
 }
 
 function mapStateToProps(globalState) {

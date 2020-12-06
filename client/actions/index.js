@@ -11,13 +11,6 @@ export function setWeather (weathers) {
   }
 }
 
-// export function setBackground(conditionToday) {
-//   return {
-//     type: SET_BACKGROUND,
-//     background: conditionToday
-//   }
-// }
-
 export function fetchWeathers() {
   //console.log('test')
   return dispatch => {
@@ -26,11 +19,7 @@ export function fetchWeathers() {
         dispatch(setWeather(weathers))
         return null
       })
+  .catch(error => console.log(error))
   }
 }
 
-// export function fetchBackground() {
-//   return dispatch => {
-//     dispatch(setBackground(conditionToday))
-//   }
-// }
