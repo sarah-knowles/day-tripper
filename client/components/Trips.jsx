@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+
 export class Trips extends React.Component {
   render() {
     return (
@@ -40,7 +41,6 @@ export class Trips extends React.Component {
       </>
     )
   }
-
 }
 
 

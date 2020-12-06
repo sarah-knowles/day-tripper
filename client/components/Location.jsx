@@ -1,18 +1,18 @@
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
+// function getLocation() {
+//   if (navigator.geolocation) {
+//     navigator.geolocation.getCurrentPosition(showPosition);
+//   } else { 
+//     x.innerHTML = "Geolocation is not supported by this browser.";
+//   }
+// }
 
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
-}
+// function showPosition(position) {
+//   x.innerHTML = "Latitude: " + position.coords.latitude + 
+//   "<br>Longitude: " + position.coords.longitude;
+// }
 
-// getCurrentPosition returns an object
+// // getCurrentPosition returns an object
 
-export default getLocation()
-export default showPosition()
+// export default getLocation()
+// export default showPosition()
