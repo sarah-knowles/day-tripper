@@ -1,15 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchWeathers } from '../actions/index'
-//import { fetchBackground } from '../actions/index'
+
 
 
 export class Weather extends React.Component {
-    componentDidMount() {
-        this.props.dispatch(fetchWeathers())
+   // componentDidMount() {
+    //    this.props.dispatch(fetchWeathers())
         //this.props.dispatch(fetchBackground()
-    }
-
+    //}
     weatherCategory = () => {
         if (this.props.weatherToday == 'hc' || 's') {
             return 'cloudy'
@@ -25,16 +23,12 @@ export class Weather extends React.Component {
         return (
             <>
                 <div className='centered'>
-                    {/* <h1 id='weather'>
-                        today is...  </h1> */}
-                        <h3>{conditionToday}</h3>
-                   
+                <h3>{conditionToday}</h3>
                 </div>
             </>
         )
     }
 }
-
 
 
 function mapStateToProps(globalState) {
