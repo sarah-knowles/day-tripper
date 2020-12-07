@@ -123,16 +123,8 @@
   border: #f1f1f1 1px solid;
 }
 
-body {
-  background-color: #808b68;
-  color: white;
-  font-size: 3.5rem;
-  font-family: "Poppins", sans-serif;
-  text-align: center;
-}
-
 h3 {
-  margin-top: -150px;
+  margin-top: -20px;
 }
 
 body {
@@ -208,6 +200,11 @@ polygon.arrow-top {
   opacity: 0.5;
 }
 
+.trips {
+  margin-top: 350px;
+  margin-bottom: 250px;
+}
+
 .wrapper {
   display: flex;
   justify-content: space-around;
@@ -278,6 +275,51 @@ polygon.arrow-top {
   width: 800px !important;
   height: 500px;
   text-align: center;
+}
+
+.dropbtn {
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #0c0c0c;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 170px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #ffffff;
 }
 
 /*# sourceMappingURL=styles.css.map*/

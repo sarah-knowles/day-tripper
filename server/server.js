@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config()
 const express = require('express')
 const path = require('path')
 const request = require('superagent')
@@ -14,12 +14,10 @@ server.get('/api/v1/weathers', (req, res) => {
     .then(response => res.json(response.body))
 })
 
-
 server.get('/api/v1/google', (req, res) => {
   request
     .get('https://maps.google.com/maps/?q=')
     .then(response => res.json(response.body))
 })
-
 
 module.exports = server

@@ -7,7 +7,7 @@ const router = express.Router()
 router.get('/', (req, res) => {
   db.getWeather()
     .then(result => {
-      res.json(result)
+       res.json(result)
     })
     .catch(err => {
       console.log(err)

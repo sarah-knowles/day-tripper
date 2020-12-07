@@ -1,14 +1,12 @@
-import React from 'react';
-import classes from './BackgroundVideo.module.css';
+import React from 'react'
+import classes from './BackgroundVideo.module.css'
 import { connect } from 'react-redux'
 import { fetchWeathers } from '../actions/index'
 
 export class BackgroundVideo extends React.Component {
-
-  componentDidMount() {
+  componentDidMount () {
     this.props.dispatch(fetchWeathers())
   }
-
 
   assignCondition = () => {
     if (this.props.weatherToday == 'hc' || 's') {
@@ -23,15 +21,14 @@ export class BackgroundVideo extends React.Component {
   assignVideo = (conditionToday) => {
     if (conditionToday == 'lc' || 'c') {
       return 'videos/sunny.mp4'
-    }
-    else if (conditionToday == 'hc' || 's') {
+    } else if (conditionToday == 'hc' || 's') {
       return 'videos/video.mp4'
     } else if (conditionToday == 'h' || 't' || 'hr') {
-       return 'https:/ / cdn.videvo.net / videvo_files / video / free / 2014 - 12 / small_watermarked / Raindrops_Videvo_preview.webm'
-    };
+      return 'https://cdn.videvo.net/videvo_files/video/free/2014-12/small_watermarked/Raindrops_Videvo_preview.webm'
+    }
   }
 
-  render() {
+  render () {
     const conditionToday = this.assignCondition()
     const videoToday = this.assignVideo(conditionToday)
 
@@ -41,7 +38,7 @@ export class BackgroundVideo extends React.Component {
         <video autoPlay="autoplay" loop="loop" muted className={classes.Video} >
           <source src={videoToday} type="video/mp4" />
                     Your browser does not support the video tag.
-                </video>
+        </video>
 
         <div className={classes.Content}>
           <div className={classes.SubContent} >
@@ -51,10 +48,9 @@ export class BackgroundVideo extends React.Component {
       </div>
     )
   }
-
 }
 
-function mapStateToProps(globalState) {
+function mapStateToProps (globalState) {
   const { consolidated_weather = [] } = globalState.weathers
   const weatherToday = consolidated_weather.map(el => el.weather_state_abbr)[0]
   return {
