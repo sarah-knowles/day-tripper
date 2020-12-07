@@ -272,6 +272,14 @@ polygon.arrow-top {
   z-index: 5;
 }
 
+.googlebox {
+  margin-top: 150px;
+  margin-left: 30%;
+  width: 800px !important;
+  height: 500px;
+  text-align: center;
+}
+
 /*# sourceMappingURL=styles.css.map*/
 
 /*# sourceMappingURL=styles.css.map*/

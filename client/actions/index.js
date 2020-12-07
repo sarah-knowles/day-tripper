@@ -1,7 +1,7 @@
 import { getWeathers } from '../apis/weathers'
 import { getTrips } from '../apis/googleMap'
 // import {conditionToday} from '../components/Weather'
-import  { geoLocate } from '../apis/weathers'
+import { geoLocate } from '../apis/weathers'
 
 export const SET_WEATHERS = 'SET_WEATHERS'
 export const SET_BACKGROUND = 'SET_BACKGROUND'
@@ -14,7 +14,6 @@ export function setWeather(weathers) {
   }
 }
 
-<<<<<<< HEAD
 export function setTrips(trips) {
   return {
     type: SET_TRIPS,
@@ -29,25 +28,22 @@ export function setTrips(trips) {
 //   }
 // }
 
-=======
->>>>>>> master
 export function fetchWeathers() {
- 
+
   //console.log('test')
   return dispatch => {
-      geoLocate()
-     .then(res =>  console.log(res))
-  
+    geoLocate()
+      .then(res => console.log(res))
+
     getWeathers()
       .then(weathers => {
         dispatch(setWeather(weathers))
         return null
       })
-    
-  //.catch(error => console.log(error))
+
+    //.catch(error => console.log(error))
   }
 }
-<<<<<<< HEAD
 
 // export function fetchBackground() {
 //   return dispatch => {
@@ -64,5 +60,3 @@ export function fetchTrips() {
       })
   }
 }
-=======
->>>>>>> master

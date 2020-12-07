@@ -13,12 +13,18 @@ class Map extends React.Component {
 
 
   gMap = () => {
+    let venueLat = this.props.tripLat
+    let venueLng = this.props.tripLng
+    console.log(venueLat[0], venueLng[0])
     return (
       <GoogleMap
         defaultZoom={10}
         defaultCenter={{ lat: - 36.848461, lng: 174.763336 }}
-      />
-
+      >
+        {this.props.tripVenue.map((venue, i) => (
+          <Marker key={venue.id} position={{ lat: venueLat[i], lng: venueLng[i] }} />
+        ))}
+      </GoogleMap>
     )
   }
 
@@ -26,8 +32,7 @@ class Map extends React.Component {
     const WrappedMap = withScriptjs(withGoogleMap(this.gMap));
     return (
       <>
-        {console.log(this.props.eachTrip[0])}
-        <div style={{ width: '100vw', height: '100vh' }}>
+        <div className='googlebox' style={{ width: '100vw', height: '100vh' }}>
           <WrappedMap
             googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDunPsG8pzbFHQnrT4zzhyimakv2P4wwV8`}
             loadingElement={<div style={{ height: "100%" }} />}
@@ -41,12 +46,20 @@ class Map extends React.Component {
 }
 
 function mapStateToProps(globalState) {
+  console.log(globalState.trips)
   const trips = globalState.trips
-  const eachTrip = trips.map(el => el.venue.location.address)
+  const tripAddress = trips.map(el => el.venue.location.address)
+  const tripLat = trips.map(el => el.venue.location.lat)
+  const tripLng = trips.map(el => el.venue.location.lng)
 
-  console.log(eachTrip)
+  const tripVenue = trips.map(el => el.venue)
+  const tripVenueName = trips.map(el => el.venue.name)
   return {
-    eachTrip
+    tripAddress,
+    tripLat,
+    tripLng,
+    tripVenue,
+    tripVenueName
   }
 }
 
