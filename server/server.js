@@ -18,10 +18,18 @@ server.get('/api/v1/weathers', (req, res) => {
 
 
 server.get('/api/v1/google', (req, res) => {
+<<<<<<< HEAD
   request
     .get('')
     .then(response => res.json(response.body))
   console.log(response.body)
+=======
+	request
+	.get('https://maps.google.com/maps/?q=')
+	//51.03841,-114.01679
+		.then(response => res.json(response.body))
+		//console.log(response.body)
+>>>>>>> master
 })
 
 
