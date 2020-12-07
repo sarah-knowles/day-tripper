@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config()
 const express = require('express')
 const path = require('path')
 const request = require('superagent')
@@ -13,7 +13,6 @@ server.get('/api/v1/weathers', (req, res) => {
     .get('https://www.metaweather.com/api/location/search/?lattlong=')
     .then(response => res.json(response.body))
 })
-
 
 server.get('/api/v1/google', (req, res) => {
   request

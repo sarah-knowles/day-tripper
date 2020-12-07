@@ -7,6 +7,6 @@ export const getTrips = () => {
       return response.body.response.groups[0].items
     })
     .catch(error => {
-      console.log("ERROR" + error)
+      console.log('ERROR' + error)
     })
 }

@@ -1,13 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-
 export class Trips extends React.Component {
-  render() {
+  render () {
     return (
-      <>
+      <div className="trips">
         <h3>things to do ...</h3>
-
 
         <div className="wrapper">
           <div className="item">
@@ -37,17 +35,14 @@ export class Trips extends React.Component {
               </div>
             </a>
           </div>
-        </div>  
-      </>
+        </div>
+      </div>
     )
   }
 }
 
-
-function mapStateToProps() {
+function mapStateToProps () {
   return {}
 }
 
 export default connect(mapStateToProps)(Trips)
-
-

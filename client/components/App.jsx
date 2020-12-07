@@ -5,35 +5,26 @@ import Weather from './Weather'
 import Trips from './Trips'
 import BackGroundVideo from './BackgroundVideo'
 import Map from './Map'
-//import Footer from './Footer'
 import { getSearch } from '../apis/weathers'
-//import { loadClient, execute } from '../apis/google'
-
-
+// import { loadClient, execute } from '../apis/google'
 
 export class App extends React.Component {
-  componentDidMount() {
+  componentDidMount () {
     this.props.dispatch(fetchWeathers())
   }
-  //console.log('test')
 
-  componentDidUpdate() {
-    if (this.props.weathers)
+  componentDidUpdate () {
+    if (this.props.weathers) {
       getSearch(this.props.weathers)
+    }
   }
 
-
-
-  render() {
+  render () {
     return (
       <>
         <div>
           <BackGroundVideo />
           <Weather />
-          <br />
-          <br />
-          <br />
-          <br />
         </div>
         <div className='arrow'>
           <svg id="more-arrows">
@@ -41,36 +32,25 @@ export class App extends React.Component {
           </svg>
         </div>
         <br />
-        <br />
-        <br />
-        <br />
         <Trips />
         <Map />
         <br />
-        <br />
-        <br />
-        {/* <Footer /> */}
       </>
     )
   }
 }
 
-
-//On page reload, scrolls to the top
+// On page reload, scrolls to the top
 window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
+  window.scrollTo(0, 0)
 }
 
-function mapStateToProps(globalState) {
-
-  let { consolidated_weather = [] } = globalState.weathers
+function mapStateToProps (globalState) {
+  const { consolidated_weather = [] } = globalState.weathers
   const weatherCode = consolidated_weather.map(el => el.weather_state_abbr)[0]
-  //console.log('globalweather', weatherCode)
   return {
     weathers: weatherCode
   }
 }
 
 export default connect(mapStateToProps)(App)
-
-
