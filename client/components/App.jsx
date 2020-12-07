@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchWeathers } from '../actions'
 import Weather from './Weather'
 import Trips from './Trips'
 import BackGroundVideo from './BackgroundVideo'
 import { getSearch } from '../apis/weathers'
+import { fetchWeathers } from '../actions/index'
 //import { loadClient, execute } from '../apis/google'
 
 
@@ -13,14 +13,14 @@ export class App extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchWeathers())
   }
-
+ //console.log('test')
 
   componentDidUpdate() {
     if (this.props.weathers)
-      getSearch(this.props.weathers)
+    getSearch(this.props.weathers)
   }
 
-  // create string here
+ 
 
   render() {
     return (
