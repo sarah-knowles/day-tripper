@@ -21,5 +21,21 @@ server.get('/api/v1/google', (req, res) => {
     .then(response => res.json(response.body))
 })
 
+server.get('/api/v1/gmap', (req, res) => {
+  const endPoint = "https://api.foursquare.com/v2/venues/explore?"
+  const parameters = {
+    client_id: "FEYZK4IJDHO2ICJHSXQNNIIVEGPFDLHTOTYZDCGS5EB54DII",
+    client_secret: process.env.REACT_APP_CLIENT_SECRET,
+    categoryId: "4bf58dd8d48988d163941735",
+    near: "Auckland",
+    v: "20201206"
+  }
+
+  request
+    .get(endPoint + new URLSearchParams(parameters))
+    .then(response =>
+      res.json(response.body)
+    )
+})
 
 module.exports = server
