@@ -49,11 +49,17 @@
     ]
   },
   "dependencies": {
+<<<<<<< HEAD
+    "dotenv": "^8.2.0",
+=======
     "@babel/runtime": "^7.12.5",
+>>>>>>> master
     "express": "^4.17.1",
     "knex": "^0.21.12",
     "pg": "^8.5.1",
+    "react-google-maps": "^9.4.5",
     "react-player": "^2.7.0",
+    "react-scripts": "^4.0.1",
     "superagent": "^6.1.0"
   },
   "devDependencies": {

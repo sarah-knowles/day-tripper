@@ -1,8 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
+<<<<<<< HEAD
+import { fetchWeathers } from '../actions'
+
+=======
+>>>>>>> master
 import Weather from './Weather'
 import Trips from './Trips'
 import BackGroundVideo from './BackgroundVideo'
+import Map from './Map'
 import { getSearch } from '../apis/weathers'
 import { fetchWeathers } from '../actions/index'
 //import { loadClient, execute } from '../apis/google'
@@ -33,6 +39,9 @@ export class App extends React.Component {
           <br />
           <br />
         </div>
+<<<<<<< HEAD
+        <Map />
+=======
         <div className='arrow'>
           <svg id="more-arrows">
             <polygon className="arrow-bottom" points="37.6,64 0,36.1 5.1,32.8 37.6,56.8 70.4,32.8 75.5,36.1 " />
@@ -46,6 +55,7 @@ export class App extends React.Component {
         <br />
         <br />
         <br />
+>>>>>>> master
       </>
     )
   }
