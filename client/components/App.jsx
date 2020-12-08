@@ -5,6 +5,7 @@ import Weather from './Weather'
 import Trips from './Trips'
 import BackGroundVideo from './BackgroundVideo'
 import Map from './Map'
+import Nav from './Nav'
 import Footer from './Footer'
 import { getSearch } from '../apis/weathers'
 // import { loadClient, execute } from '../apis/google'
@@ -24,6 +25,8 @@ export class App extends React.Component {
     return (
       <>
         <div>
+          <Nav />
+          <br/>
           <BackGroundVideo />
           <Weather />
         </div>
