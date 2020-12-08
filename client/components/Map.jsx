@@ -2,14 +2,29 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, infoWindow, InfoWindow } from 'react-google-maps'
 import { fetchTrips } from '../actions'
+// import { getTrips } from '../apis/googleMap'
 
 class Map extends React.Component {
   state = {
-    selectedVenue: ''
+    selectedVenue: '',
+    city: 'Auckland'
   }
 
-  componentDidMount () {
-    this.props.dispatch(fetchTrips())
+  componentDidMount() {
+    this.props.dispatch(fetchTrips(this.state.city))
+  }
+
+  handleChange = (e) => {
+    console.log(e.target.value)
+    this.setState({ city: e.target.value })
+    console.log(this.state.city)
+  }
+
+  handleSubmit = () => {
+    console.log('test')
+    console.log(this.state.city)
+    this.props.dispatch(fetchTrips(this.state.city))
+    console.log(this.state.city)
   }
 
   gMap = () => {
@@ -47,7 +62,7 @@ class Map extends React.Component {
     )
   }
 
-  render () {
+  render() {
     const WrappedMap = withScriptjs(withGoogleMap(this.gMap))
     return (
       <>
@@ -60,20 +75,26 @@ class Map extends React.Component {
           />
         </div>
 
-        <div className="dropdown">
-          <button className="dropbtn">you are in...</button>
-          <div className="dropdown-content">
-            <a href="" >wellington</a>
-            <a href="#" >christchurch</a>
-             <a href="#" >masterton</a>
-          </div> 
-        </div>
+        <form onSubmit={this.handleSubmit}>
+          <div className="dropdown">
+            <label className="dropbtn">you are in...</label>
+            <select className="dropdown-content" name='citySelector' onChange={this.handleChange}>
+              <option value='Auckland'>Auckland</option>
+              <option value='Wellington'>Wellington</option>
+              <option value='Christchurch'>Christchurch</option>
+              <option value='Masterton'>Masterton</option>
+            </select>
+          </div>
+          <button type='submit'>
+            Submit
+            </button>
+        </form>
       </>
     )
   }
 }
 
-function mapStateToProps (globalState) {
+function mapStateToProps(globalState) {
   const trips = globalState.trips
   const tripVenue = trips.map(el => el.venue)
 
