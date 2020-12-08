@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-// import '../../server/public/styles.css';
-import { GoogleMap, withScriptjs, withGoogleMap, Marker, infoWindow, InfoWindow } from 'react-google-maps';
+import { GoogleMap, withScriptjs, withGoogleMap, Marker, infoWindow, InfoWindow } from 'react-google-maps'
 import { fetchTrips } from '../actions'
 
 class Map extends React.Component {
@@ -9,22 +8,23 @@ class Map extends React.Component {
     selectedVenue: ''
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.props.dispatch(fetchTrips())
   }
 
   gMap = () => {
     return (
       <GoogleMap
-        defaultZoom={10}
+        defaultZoom={12}
         defaultCenter={{ lat: -36.848461, lng: 174.763336 }}
       >
         {this.props.tripVenue.map((venue) => (
           <Marker
             key={venue.id}
             position={{ lat: venue.location.lat, lng: venue.location.lng }}
-            onClick={() => {
+            onClick={(e) => {
               this.setState({ selectedVenue: venue })
+              e.preventDefault()
             }}
           />
         ))}
@@ -36,7 +36,7 @@ class Map extends React.Component {
               lng: this.state.selectedVenue.location.lng
             }}
           >
-            <div className={'infoWindow'}>
+            <div className='infoWindow'>
               <h2>{this.state.selectedVenue.name}</h2>
               <h2>{this.state.selectedVenue.location.formattedAddress}</h2>
             </div>
@@ -47,7 +47,7 @@ class Map extends React.Component {
     )
   }
 
-  render() {
+  render () {
     const WrappedMap = withScriptjs(withGoogleMap(this.gMap))
     return (
       <>
@@ -63,17 +63,17 @@ class Map extends React.Component {
         <div className="dropdown">
           <button className="dropbtn">you are in...</button>
           <div className="dropdown-content">
-            <a href="">Wellington</a>
-            <a href="#">Christchurch</a>
-            <a href="#">Masterton</a>
-          </div>
+            <a href="" >wellington</a>
+            <a href="#" >christchurch</a>
+             <a href="#" >masterton</a>
+          </div> 
         </div>
       </>
     )
   }
 }
 
-function mapStateToProps(globalState) {
+function mapStateToProps (globalState) {
   const trips = globalState.trips
   const tripVenue = trips.map(el => el.venue)
 

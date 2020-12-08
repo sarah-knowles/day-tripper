@@ -5,6 +5,7 @@ import Weather from './Weather'
 import Trips from './Trips'
 import BackGroundVideo from './BackgroundVideo'
 import Map from './Map'
+import Footer from './Footer'
 import { getSearch } from '../apis/weathers'
 // import { loadClient, execute } from '../apis/google'
 
@@ -35,6 +36,8 @@ export class App extends React.Component {
         <Trips />
         <Map />
         <br />
+        <Footer />
+        <br/>
       </>
     )
   }
