@@ -106,6 +106,9 @@ body::-webkit-scrollbar {
   height: 65px;
 }
 
+.arrow-bottom {
+  padding-bottom: 75px;
+}
 
 polygon:hover {
   fill: #FFF;
@@ -166,6 +169,7 @@ polygon.arrow-top {
 
 
 .frame {
+  border-radius: 8%;
   width: 300px;
   height: 250px;
   border: 3px solid #ccc;
@@ -182,6 +186,7 @@ polygon.arrow-top {
 .link {
   color: rgb(74, 75, 75);
   font-size: 1rem;
+  text-decoration: none !important;
 }
 
 #weather {
@@ -238,13 +243,15 @@ polygon.arrow-top {
 }
 
 .dropdown-content {
+  margin-left: 26%;
+  margin-top: 2%;
   border-radius: 8px;
   font-family: "Poppins", sans-serif;
   font-size: 1.25rem;
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  width: 300px;
+  width: 150px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -253,7 +260,7 @@ polygon.arrow-top {
   color: black;
   padding: 12px 20px;
   text-decoration: none;
-  display: block;
+  display: inline-block;
 }
 
 .dropdown-content a:hover {background-color: #ddd;}
@@ -262,9 +269,25 @@ polygon.arrow-top {
 
 .dropdown:hover .dropbtn {background-color: #ffffff;}
 
+//dropdown styles end
+
+
 // mapstyles
 .infoWindow {
   color: black;
 }
+
+
+.submit {
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: rgb(12, 12, 12);
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  border: none;
+  width: 150px; 
+}
+
 
 /*# sourceMappingURL=styles.css.map*/

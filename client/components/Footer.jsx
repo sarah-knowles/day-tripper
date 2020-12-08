@@ -5,7 +5,7 @@ export class Footer extends React.Component {
   render () {
     return (
       <>
-        <p style={{ color: 'darkgrey', fontSize: '.75rem', padding: '50px', marginTop: '50px' }}>  Copyright  2020 </p>
+        <p style={{ color: 'darkgrey', fontSize: '.75rem', padding: '50px', marginTop: '50px' }}>  copyright  2020 </p>
 
       </>
     )
