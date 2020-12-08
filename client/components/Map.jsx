@@ -1,13 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, infoWindow, InfoWindow } from 'react-google-maps'
-import { fetchTrips } from '../actions'
+import { fetchTrips, updateWeatherLocation } from '../actions'
 // import { getTrips } from '../apis/googleMap'
 
 class Map extends React.Component {
   state = {
     selectedVenue: '',
-    city: 'Auckland'
+    city: 'Auckland', //wellington now
+    lat: -36.848461,
+    lng: 174.763336
   }
 
   componentDidMount() {
@@ -22,16 +24,25 @@ class Map extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(this.state.city)
     this.props.dispatch(fetchTrips(this.state.city))
-    console.log(this.state.city)
+    if (this.state.city == 'Wellington') {
+      this.setState({ lat: -41.28664, lng: 174.77557 })
+    } else if (this.state.city == 'Christchurch') {
+      this.setState({ lat: -43.525650, lng: 172.639847 })
+    } else if (this.state.city == 'Napier') {
+      this.setState({ lat: -39.48333, lng: 176.91667 })
+    } else if (this.state.city == 'Auckland') {
+      this.setState({ lat: -36.848461, lng: 174.763336 })
+    }
+    this.props.dispatch(updateWeatherLocation(this.state.city)) //
   }
+
 
   gMap = () => {
     return (
       <GoogleMap
         defaultZoom={12}
-        defaultCenter={{ lat: -36.848461, lng: 174.763336 }}
+        defaultCenter={{ lat: this.state.lat, lng: this.state.lng }}
       >
         {this.props.tripVenue.map((venue) => (
           <Marker
@@ -63,6 +74,8 @@ class Map extends React.Component {
   }
 
   render() {
+
+
     const WrappedMap = withScriptjs(withGoogleMap(this.gMap))
     return (
       <>
@@ -79,13 +92,13 @@ class Map extends React.Component {
           <div className="dropdown">
             <label className="dropbtn">you are in...</label>
             <select className="dropdown-content" name='citySelector' onChange={this.handleChange}>
-              <option value='Auckland'>Auckland</option>
-              <option value='Wellington'>Wellington</option>
-              <option value='Christchurch'>Christchurch</option>
-              <option value='Masterton'>Masterton</option>
+              <option value='Auckland'>auckland</option>
+              <option value='Wellington'>wellington</option>
+              <option value='Christchurch'>christchurch</option>
+              <option value='Napier'>napier</option>
             </select>
           </div>
-          <button type='submit'>
+          <button type='submit' className='submit'>
             Submit
             </button>
         </form>
@@ -97,7 +110,8 @@ class Map extends React.Component {
 function mapStateToProps(globalState) {
   const trips = globalState.trips
   const tripVenue = trips.map(el => el.venue)
-
+  const weatherLocation = globalState.weatherLocation
+  console.log(weatherLocation)
   return {
     trips,
     tripVenue
@@ -106,7 +120,3 @@ function mapStateToProps(globalState) {
 
 export default connect(mapStateToProps)(Map)
 
-// wellington lat&long - -41.28664, 174.77557
-// christchurch lat&long - -43.525650, 172.639847
-// masterton lat&long - -40.95972, 175.6575
-// dropdown menu for different cities;
