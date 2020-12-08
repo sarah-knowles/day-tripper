@@ -27,9 +27,11 @@ export default class Nav extends React.Component {
     const m = this.state.time.getMinutes()
 
     return (
+      <div className='clockdiv' style={{ float: 'right', width: '100%', marginLeft: '45%' }}> 
       <p className="clock">
         {h % 12}:{(m < 10 ? '0' + m : m)} {h < 12 ? 'am' : 'pm'}
       </p>
+      </div>
     );
   }
 }

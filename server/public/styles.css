@@ -145,16 +145,9 @@ body::-webkit-scrollbar {
   padding-top: 25px;
 }
 
-#navbar {
-  transform: translateY(-150%);
-}
-
-.nav-container:hover #navbar {
-  transform: translateY(0);
-}
-
 .g-signin2 {
   text-align: right;
+  visibility: hidden;
 }
 
 .arrow {
@@ -162,6 +155,7 @@ body::-webkit-scrollbar {
   left: 50%;
   top: 80%;
   transform: translate(-50%, -50%);
+  margin-top: 55px;
 }
 
 #more-arrows {
@@ -247,22 +241,16 @@ polygon.arrow-top {
   font-size: 4.5rem;
 }
 
-#navbar {
-  transform: translateY(-150%);
-}
-
-.nav-container:hover #navbar {
-  transform: translateY(0);
-}
-
 .clock {
-  float: right;
   color: white;
   font-size: 1rem;
 }
 
-.g-signin2 {
-  text-align: right;
+.clockdiv {
+  position: absolute;
+  float: right !important;
+  top: 5px;
+  z-index: 4;
 }
 
 #gsearch {

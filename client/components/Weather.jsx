@@ -7,6 +7,7 @@ export class Weather extends React.Component {
   // this.props.dispatch(fetchBackground()
     // }
     weatherCategory = () => {
+     
       if (this.props.weatherToday == 'hc' || 's') {
         return 'cloudy'
       } else if (this.props.weatherToday == 'lc' || 'c') {
@@ -16,7 +17,7 @@ export class Weather extends React.Component {
       } else console.log('Broken')
     }
 
-    render () {
+     render () {
       const conditionToday = this.weatherCategory()
       return (
         <>
@@ -26,7 +27,8 @@ export class Weather extends React.Component {
         </>
       )
     }
-}
+  }
+
 
 function mapStateToProps (globalState) {
   const { consolidated_weather = [] } = globalState.weathers
