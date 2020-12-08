@@ -10,7 +10,7 @@ describe('getWeathers makes a successful api call', () => {
     //   getCurrentPosition: jest.fn(),
     //   watchPosition: jest.fn()
     // };
-    
+
     // global.navigator.geolocation = mockGeolocation;
 
     const testAction = getWeathers(testWeather)

@@ -14,7 +14,7 @@ class Map extends React.Component {
 
   gMap = () => {
     return (
-      
+
       <GoogleMap
         defaultZoom={12}
         defaultCenter={{ lat: -36.848461, lng: 174.763336 }}
@@ -66,8 +66,8 @@ class Map extends React.Component {
           <div className="dropdown-content">
             <a href="" >wellington</a>
             <a href="#" >christchurch</a>
-             <a href="#" >masterton</a>
-          </div> 
+            <a href="#" >masterton</a>
+          </div>
         </div>
       </>
     )
