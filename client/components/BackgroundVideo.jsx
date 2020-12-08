@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { fetchWeathers } from '../actions/index'
 
 export class BackgroundVideo extends React.Component {
-  componentDidMount () {
+  componentDidMount() {
     this.props.dispatch(fetchWeathers())
   }
 
@@ -14,21 +14,22 @@ export class BackgroundVideo extends React.Component {
     } else if (this.props.weatherToday == 'lc' || 'c') {
       return 'sunny'
     } else if (this.props.weatherToday == 'h' || 't' || 'hr') {
-      return 'awful'
+      return 'raining'
     } else console.log('Broken')
   }
 
   assignVideo = (conditionToday) => {
-    if (conditionToday == 'lc' || 'c') {
+
+     if (conditionToday == 'sunny') {
       return 'videos/sunny.mp4'
-    } else if (conditionToday == 'hc' || 's') {
+     } else if (conditionToday == 'cloudy') {
       return 'videos/video.mp4'
-    } else if (conditionToday == 'h' || 't' || 'hr') {
-      return 'https://cdn.videvo.net/videvo_files/video/free/2014-12/small_watermarked/Raindrops_Videvo_preview.webm'
+     } else if (conditionToday == 'raining') {
+      return 'videos/rain.mp4'
     }
   }
 
-  render () {
+  render() {
     const conditionToday = this.assignCondition()
     const videoToday = this.assignVideo(conditionToday)
 
@@ -50,7 +51,7 @@ export class BackgroundVideo extends React.Component {
   }
 }
 
-function mapStateToProps (globalState) {
+function mapStateToProps(globalState) {
   const { consolidated_weather = [] } = globalState.weathers
   const weatherToday = consolidated_weather.map(el => el.weather_state_abbr)[0]
   return {

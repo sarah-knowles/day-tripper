@@ -40,6 +40,7 @@ class Map extends React.Component {
 
   gMap = () => {
     return (
+      
       <GoogleMap
         defaultZoom={12}
         defaultCenter={{ lat: this.state.lat, lng: this.state.lng }}

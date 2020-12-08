@@ -87,16 +87,9 @@ body::-webkit-scrollbar {
 }
 
 
- #navbar {
-  transform: translateY(-150%);
-}
-
-.nav-container:hover #navbar {
-  transform: translateY(0);
-}
-
 .g-signin2 {
   text-align: right;
+  visibility: hidden;
 }
 
 .arrow {
@@ -104,6 +97,7 @@ body::-webkit-scrollbar {
   left: 50%;
   top: 80%;
   transform: translate(-50%, -50%);
+  margin-top: 55px;
 }
 
 #more-arrows {
@@ -126,11 +120,9 @@ polygon.arrow-middle:hover {
   transform: translateY(1px);
 }
 
-
 polygon.arrow-top:hover {
   transform: translateY(18px);
 }
-
 
 polygon {
   fill: #FFF;
@@ -159,7 +151,6 @@ polygon.arrow-top {
   margin-top: 75px;
 }
 
-
 .image {
   width: 200px;
   height: 200px;
@@ -183,15 +174,13 @@ polygon.arrow-top {
   padding: 15px 10px;
 }
 
-
 .caption {
-  color: darkcyan;
+  color: rgb(75, 75, 75);
   font-size: 1rem;
 }
 
-
 .link {
-  color: darkcyan;
+  color: rgb(74, 75, 75);
   font-size: 1rem;
 }
 
@@ -199,16 +188,16 @@ polygon.arrow-top {
   font-size: 4.5rem;
 }
 
-#navbar {
-  transform: translateY(-150%);
+.clock {
+  color: white;
+  font-size: 1rem;
 }
 
-.nav-container:hover #navbar {
-  transform: translateY(0);
-}
-
-.g-signin2 {
-  text-align: right;
+.clockdiv {
+  position: absolute;
+  float: right !important;
+  top: 5px;
+  z-index: 4;
 }
 
 #gsearch {
@@ -221,7 +210,7 @@ polygon.arrow-top {
   z-index: 5;
 }
 
-
+// map
 .googlebox {
   margin-top: 150px;
   margin-left: 30%;
@@ -230,6 +219,7 @@ polygon.arrow-top {
   text-align: center;
 }
 
+// dropdown menu styles
 .dropbtn {
   border-radius: 8px;
   background-color: #ffffff;
@@ -248,6 +238,7 @@ polygon.arrow-top {
 }
 
 .dropdown-content {
+  border-radius: 8px;
   font-family: "Poppins", sans-serif;
   font-size: 1.25rem;
   display: none;
