@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { fetchWeathers } from '../actions/index'
 
 export class BackgroundVideo extends React.Component {
-  componentDidMount() {
+  componentDidMount () {
     this.props.dispatch(fetchWeathers())
   }
 
@@ -19,17 +19,16 @@ export class BackgroundVideo extends React.Component {
   }
 
   assignVideo = (conditionToday) => {
-
-     if (conditionToday == 'sunny') {
+    if (conditionToday == 'sunny') {
       return 'videos/sunny.mp4'
-     } else if (conditionToday == 'cloudy') {
+    } else if (conditionToday == 'cloudy') {
       return 'videos/video.mp4'
-     } else if (conditionToday == 'raining') {
+    } else if (conditionToday == 'raining') {
       return 'videos/rain.mp4'
     }
   }
 
-  render() {
+  render () {
     const conditionToday = this.assignCondition()
     const videoToday = this.assignVideo(conditionToday)
 
@@ -51,7 +50,7 @@ export class BackgroundVideo extends React.Component {
   }
 }
 
-function mapStateToProps(globalState) {
+function mapStateToProps (globalState) {
   const { consolidated_weather = [] } = globalState.weathers
   const weatherToday = consolidated_weather.map(el => el.weather_state_abbr)[0]
   return {

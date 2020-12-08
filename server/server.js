@@ -2,7 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const path = require('path')
 const request = require('superagent')
-//console.log(process.env.REACT_APP_CLIENT_SECRET)
+// console.log(process.env.REACT_APP_CLIENT_SECRET)
 const server = express()
 
 server.use(express.json())

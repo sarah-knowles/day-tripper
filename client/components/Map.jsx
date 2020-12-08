@@ -40,7 +40,7 @@ class Map extends React.Component {
 
   gMap = () => {
     return (
-      
+
       <GoogleMap
         defaultZoom={12}
         defaultCenter={{ lat: this.state.lat, lng: this.state.lng }}
@@ -92,6 +92,7 @@ class Map extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <div className="dropdown">
             <label className="dropbtn">you are in...</label>
+           
             <select className="dropdown-content" name='citySelector' onChange={this.handleChange}>
               <option value='Auckland'>auckland</option>
               <option value='Wellington'>wellington</option>
@@ -100,7 +101,7 @@ class Map extends React.Component {
             </select>
           </div>
           <button type='submit' className='submit'>
-            Submit
+            submit
             </button>
         </form>
       </>
