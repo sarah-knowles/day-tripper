@@ -20,8 +20,8 @@ class Map extends React.Component {
     console.log(this.state.city)
   }
 
-  handleSubmit = () => {
-    console.log('test')
+  handleSubmit = (e) => {
+    e.preventDefault()
     console.log(this.state.city)
     this.props.dispatch(fetchTrips(this.state.city))
     console.log(this.state.city)
@@ -68,7 +68,7 @@ class Map extends React.Component {
       <>
         <div className='googlebox' style={{ width: '100vw', height: '100vh' }}>
           <WrappedMap
-            googleMapURL={'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDunPsG8pzbFHQnrT4zzhyimakv2P4wwV8'}
+            googleMapURL={'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyBh_FVhVkRrg3kXqR6FkWOO7K35RSzxVl4'}
             loadingElement={<div style={{ height: '100%' }} />}
             containerElement={<div style={{ height: '100%' }} />}
             mapElement={<div style={{ height: '100%' }} />}
