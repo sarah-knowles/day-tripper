@@ -1,32 +1,32 @@
 import React from 'react'
 
 export default class Nav extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       time: new Date()
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.intervalID = setInterval(
       () => this.tick(),
       1000
     )
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     clearInterval(this.intervalID)
   }
 
-  tick () {
+  tick() {
     this.setState({
       time: new Date()
 
     })
   }
 
-  render () {
+  render() {
     const h = this.state.time.getHours()
     const m = this.state.time.getMinutes()
 

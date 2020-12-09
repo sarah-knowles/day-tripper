@@ -7,7 +7,7 @@ import { fetchTrips, updateWeatherLocation } from '../actions'
 class Map extends React.Component {
   state = {
     selectedVenue: '',
-    city: 'Auckland', //wellington now
+    city: 'Auckland',
     lat: -36.848461,
     lng: 174.763336
   }
@@ -17,9 +17,7 @@ class Map extends React.Component {
   }
 
   handleChange = (e) => {
-    console.log(e.target.value)
     this.setState({ city: e.target.value })
-    console.log(this.state.city)
   }
 
   handleSubmit = (e) => {
@@ -29,8 +27,8 @@ class Map extends React.Component {
       this.setState({ lat: -41.28664, lng: 174.77557 })
     } else if (this.state.city == 'Christchurch') {
       this.setState({ lat: -43.525650, lng: 172.639847 })
-    } else if (this.state.city == 'Napier') {
-      this.setState({ lat: -39.48333, lng: 176.91667 })
+    } else if (this.state.city == 'Melbourne') {
+      this.setState({ lat: -37.813629, lng: 144.963058 })
     } else if (this.state.city == 'Auckland') {
       this.setState({ lat: -36.848461, lng: 174.763336 })
     }
@@ -92,12 +90,12 @@ class Map extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <div className="dropdown">
             <label className="dropbtn">you are in...</label>
-           
+
             <select className="dropdown-content" name='citySelector' onChange={this.handleChange}>
               <option value='Auckland'>auckland</option>
               <option value='Wellington'>wellington</option>
               <option value='Christchurch'>christchurch</option>
-              <option value='Napier'>napier</option>
+              <option value='Melbourne'>melbourne</option>
             </select>
           </div>
           <button type='submit' className='submit'>
@@ -113,10 +111,10 @@ function mapStateToProps(globalState) {
   const trips = globalState.trips
   const tripVenue = trips.map(el => el.venue)
   const weatherLocation = globalState.weatherLocation
-  console.log(weatherLocation)
   return {
     trips,
-    tripVenue
+    tripVenue,
+    weatherLocation
   }
 }
 

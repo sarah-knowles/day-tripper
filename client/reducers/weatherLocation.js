@@ -1,6 +1,6 @@
 import { SET_LOCATION } from '../actions'
 
-const initialState = []
+const initialState = 'Auckland'
 
 const weatherLocation = (state = initialState, action) => {
   switch (action.type) {

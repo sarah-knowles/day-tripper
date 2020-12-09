@@ -1,22 +1,23 @@
 import request from 'superagent'
 
-const rootUrl = 'https://www.metaweather.com/api/location/search/?lattlong='
+const serverURL = 'http://localhost:3000/api/v1'
 
-export async function geoLocate() {
+function errorHandler(method, route) {
+  return (err) => {
+    if (err.message === 'Not Found') {
+      throw Error(`Error: You need to implement an API route for ${method} ${route}`)
+    } else {
+      throw Error(`${err.message} on ${method} ${route}`)
+    }
+  }
 }
 
-export function getWeathers(lat, lng) {
-  // let userLocation = {}
-  // navigator.geolocation.getCurrentPosition(function (position) {
-  //   userLocation = { latt: position.coords.latitude, long: position.coords.longitude }
-  //   console.log(userLocation)
-  //   return userLocation
-  // })
-  console.log(lat, lng)
+export function getWeathers(woeid) {
   return request
-    .get(`${rootUrl}${lat},${lng}`)
+    .get(`/api/v1/weathers/${woeid}`)
     .then(res => {
-      console.log(res.body)
+      (res.body)
       return res.body
     })
+    .catch(errorHandler('GET'), `${serverURL}/weathers`)
 }

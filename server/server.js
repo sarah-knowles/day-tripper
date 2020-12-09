@@ -2,23 +2,19 @@ require('dotenv').config()
 const express = require('express')
 const path = require('path')
 const request = require('superagent')
-// console.log(process.env.REACT_APP_CLIENT_SECRET)
+// (process.env.REACT_APP_CLIENT_SECRET)
 const server = express()
 
 server.use(express.json())
 server.use(express.static(path.join(__dirname, 'public')))
 
-server.get('/api/v1/weathers', (req, res) => {
+server.get('/api/v1/weathers/:woeid', (req, res) => {
+  const woeid = req.params.woeid
   request
-    .get('https://www.metaweather.com/api/location/search/?lattlong=')
+    .get(`https://www.metaweather.com/api/location/${woeid}`)
     .then(response => res.json(response.body))
 })
 
-server.get('/api/v1/google', (req, res) => {
-  request
-    .get('https://maps.google.com/maps/?q=')
-    .then(response => res.json(response.body))
-})
 
 server.get('/api/v1/gmap/:city', (req, res) => {
   const city = req.params.city
