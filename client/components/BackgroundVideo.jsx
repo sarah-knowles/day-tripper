@@ -1,10 +1,11 @@
 import React from 'react'
 import classes from './BackgroundVideo.module.css'
 import { connect } from 'react-redux'
-import { fetchWeathers } from '../actions/index'
+import { fetchWeathers, updateWeatherLocation } from '../actions/index'
 
 export class BackgroundVideo extends React.Component {
   componentDidMount() {
+    console.log(this.props)
     this.updateWeather()
   }
 
@@ -16,6 +17,7 @@ export class BackgroundVideo extends React.Component {
 
   updateWeather = () => {
     const coordinate = this.assignCoordinate()
+    console.log(coordinate, coordinate.woeid)
     this.props.dispatch(fetchWeathers(coordinate.woeid))
   }
 
@@ -27,7 +29,7 @@ export class BackgroundVideo extends React.Component {
     } else if (this.props.weatherLocation == 'Melbourne') { //1103816
       return ({ woeid: 1103816 })
     } else if (this.props.weatherLocation == 'Auckland') { //2348079
-      return ({ woied: 2348079 })
+      return ({ woeid: 2348079 })
     }
   }
 
@@ -55,9 +57,9 @@ export class BackgroundVideo extends React.Component {
   render() {
     const conditionToday = this.assignCondition(this.props.weatherToday)
     const videoToday = this.assignVideo(conditionToday)
+    console.log(this.props.weatherToday)
 
     return (
-
       <div className={classes.Container} >
         <video autoPlay="autoplay" loop="loop" muted className={classes.Video} >
           <source src={videoToday} type="video/mp4" />
@@ -78,6 +80,7 @@ function mapStateToProps(globalState) {
   const { consolidated_weather = [] } = globalState.weathers
   const weatherToday = consolidated_weather.map(el => el.weather_state_abbr)[0]
   const weatherLocation = globalState.weatherLocation
+  console.log(globalState)
   return {
     weatherToday,
     weatherLocation

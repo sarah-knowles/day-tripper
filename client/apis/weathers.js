@@ -13,10 +13,12 @@ function errorHandler(method, route) {
 }
 
 export function getWeathers(woeid) {
+  console.log('getWeathers')
+  console.log(woeid)
   return request
     .get(`/api/v1/weathers/${woeid}`)
     .then(res => {
-      (res.body)
+      console.log(res.body)
       return res.body
     })
     .catch(errorHandler('GET'), `${serverURL}/weathers`)

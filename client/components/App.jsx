@@ -11,7 +11,7 @@ import Footer from './Footer'
 export class App extends React.Component {
 
   componentDidMount() {
-    this.updateWeather()
+    // this.updateWeather()
   }
 
   componentDidUpdate(previousProps) {
@@ -22,6 +22,7 @@ export class App extends React.Component {
 
   updateWeather = () => {
     const coordinate = this.assignCoordinate()
+    console.log(coordinate)
     this.props.dispatch(fetchWeathers(coordinate.woeid)) //works with the api to fetch JSON api data
   }
 
@@ -68,10 +69,7 @@ window.onbeforeunload = function () {
 }
 
 function mapStateToProps(globalState) {
-  const { consolidated_weather = [] } = globalState.weathers
-  const weatherToday = consolidated_weather.map(el => el.weather_state_abbr)[0]
   const weatherLocation = globalState.weatherLocation
-  console.log(weatherToday)
   return {
     weatherLocation
   }

@@ -31,10 +31,11 @@ export function setTrips(trips) {
 }
 
 export function fetchWeathers(woeid) {
+  console.log(woeid)
   return dispatch => {
-
     getWeathers(woeid)
       .then(weathers => {
+        console.log(weathers)
         dispatch(setWeather(weathers))
         return null
       })
