@@ -17,10 +17,9 @@ export function setWeather(weathers) {
 }
 
 export function updateWeatherLocation(city) {
-  console.log(city)
   return {
     type: SET_LOCATION,
-    weatherLocation: city //wellington
+    weatherLocation: city
   }
 }
 
@@ -31,14 +30,12 @@ export function setTrips(trips) {
   }
 }
 
-export function fetchWeathers(lat, lng) {
-  console.log(lat, lng)
+export function fetchWeathers(woeid) {
+  console.log(woeid)
   return dispatch => {
-    geoLocate()
-      .then(res => console.log(res))
-
-    getWeathers(lat, lng)
+    getWeathers(woeid)
       .then(weathers => {
+        console.log(weathers)
         dispatch(setWeather(weathers))
         return null
       })
@@ -48,11 +45,9 @@ export function fetchWeathers(lat, lng) {
 }
 
 export function fetchTrips(city) {
-  console.log(city)
   return dispatch => {
     getTrips(city)
       .then(trips => {
-        console.log(trips)
         dispatch(setTrips(trips))
         return null
       })

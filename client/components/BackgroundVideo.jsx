@@ -1,21 +1,49 @@
 import React from 'react'
 import classes from './BackgroundVideo.module.css'
 import { connect } from 'react-redux'
-import { fetchWeathers } from '../actions/index'
+import { fetchWeathers, updateWeatherLocation } from '../actions/index'
 
 export class BackgroundVideo extends React.Component {
-  componentDidMount () {
-    this.props.dispatch(fetchWeathers())
+  componentDidMount() {
+    console.log(this.props)
+    this.updateWeather()
+
   }
 
-  assignCondition = () => {
-    if (this.props.weatherToday == 'hc' || 's') {
+  componentDidUpdate(previousProps) {
+    if (previousProps.weatherLocation !== this.props.weatherLocation) {
+      this.updateWeather()
+    }
+  }
+
+  updateWeather = () => {
+    const coordinate = this.assignCoordinate()
+    console.log(coordinate, coordinate.woeid)
+    this.props.dispatch(fetchWeathers(coordinate.woeid))
+  }
+
+  assignCoordinate = () => {
+    if (this.props.weatherLocation == 'Wellington') { //2351310
+      return ({ woeid: 2351310 })
+    } else if (this.props.weatherLocation == 'Christchurch') { //2348327
+      return ({ woeid: 2348327 })
+    } else if (this.props.weatherLocation == 'Melbourne') { //1103816
+      return ({ woeid: 1103816 })
+    } else if (this.props.weatherLocation == 'Auckland') { //2348079
+      return ({ woeid: 2348079 })
+    }
+  }
+
+  //Videos
+  assignCondition = (weatherToday) => {
+    console.log(weatherToday)
+    if (weatherToday == 'hc' || weatherToday == 's' || weatherToday == 'lr') {
       return 'cloudy'
-    } else if (this.props.weatherToday == 'lc' || 'c') {
+    } else if (weatherToday == 'lc' || weatherToday == 'c') {
       return 'sunny'
-    } else if (this.props.weatherToday == 'h' || 't' || 'hr') {
+    } else if (weatherToday == 'h' || weatherToday == 't' || weatherToday == 'hr') {
       return 'raining'
-    } else console.log('Broken')
+    } else ('Broken')
   }
 
   assignVideo = (conditionToday) => {
@@ -28,21 +56,16 @@ export class BackgroundVideo extends React.Component {
     }
   }
 
-  render () {
-    const conditionToday = this.assignCondition()
+  render() {
+    const conditionToday = this.assignCondition(this.props.weatherToday)
     const videoToday = this.assignVideo(conditionToday)
-
     return (
-
       <div className={classes.Container} >
-        <video autoPlay="autoplay" loop="loop" muted className={classes.Video} >
-          <source src={videoToday} type="video/mp4" />
-                    Your browser does not support the video tag.
-        </video>
-
+        <video src={videoToday} type="video/mp4" autoPlay="autoplay" loop="loop" muted className={classes.Video} />
         <div className={classes.Content}>
           <div className={classes.SubContent} >
-            <h1 style={{ marginTop: '-200px' }}>today is ...{this.props.weatherCode}</h1>
+            <h1 style={{ marginTop: '-200px' }}>today is ...</h1>
+            <h2>{conditionToday}</h2>
           </div>
         </div>
       </div>
@@ -50,12 +73,14 @@ export class BackgroundVideo extends React.Component {
   }
 }
 
-function mapStateToProps (globalState) {
+function mapStateToProps(globalState) {
   const { consolidated_weather = [] } = globalState.weathers
   const weatherToday = consolidated_weather.map(el => el.weather_state_abbr)[0]
+  const weatherLocation = globalState.weatherLocation
+  console.log(globalState)
   return {
-    weatherToday
+    weatherToday,
+    weatherLocation
   }
 }
-
 export default connect(mapStateToProps)(BackgroundVideo)

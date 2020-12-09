@@ -7,38 +7,36 @@ import BackGroundVideo from './BackgroundVideo'
 import Map from './Map'
 import Nav from './Nav'
 import Footer from './Footer'
-import { getSearch } from '../apis/weathers'
-// import { loadClient, execute } from '../apis/google'
 
 export class App extends React.Component {
-  state = {
-    lat: '',
-    lng: ''
-  }
+
   componentDidMount() {
-    this.props.dispatch(fetchWeathers(this.state.lat, this.state.lng))
+    // this.updateWeather()
   }
 
-  componentDidUpdate() {
-    if (this.props.weathers) {
-      getSearch(this.props.weathers)
+  componentDidUpdate(previousProps) {
+    if (previousProps.weatherLocation !== this.props.weatherLocation) {
+      this.updateWeather()
     }
-    console.log(this.state.lat)
-    this.props.dispatch(fetchWeathers(this.state.lat, this.state.lng))
+  }
+
+  updateWeather = () => {
+    const coordinate = this.assignCoordinate()
+    console.log(coordinate)
+    this.props.dispatch(fetchWeathers(coordinate.woeid)) //works with the api to fetch JSON api data
   }
 
   assignCoordinate = () => {
-    if (this.props.weatherLocation == 'Wellington') {
-      this.setState({ lat: -41.28664, lng: 174.77557 })
-    } else if (this.props.weatherLocation == 'Christchurch') {
-      this.setState({ lat: -43.525650, lng: 172.639847 })
-    } else if (this.props.weatherLocation == 'Napier') {
-      this.setState({ lat: -39.48333, lng: 176.91667 })
-    } else if (this.props.weatherLocation == 'Auckland') {
-      this.setState({ lat: -36.848461, lng: 174.763336 })
+    if (this.props.weatherLocation == 'Wellington') { //2351310
+      return ({ woeid: 2351310 })
+    } else if (this.props.weatherLocation == 'Christchurch') { //2348327
+      return ({ woeid: 2348327 })
+    } else if (this.props.weatherLocation == 'Melbourne') { //1103816
+      return ({ woeid: 1103816 })
+    } else if (this.props.weatherLocation == 'Auckland') { //2348079
+      return ({ woied: 2348079 })
     }
   }
-
 
 
   render() {
@@ -71,11 +69,8 @@ window.onbeforeunload = function () {
 }
 
 function mapStateToProps(globalState) {
-  const { consolidated_weather = [] } = globalState.weathers
-  const weatherCode = consolidated_weather.map(el => el.weather_state_abbr)[0]
   const weatherLocation = globalState.weatherLocation
   return {
-    weathers: weatherCode,
     weatherLocation
   }
 }
