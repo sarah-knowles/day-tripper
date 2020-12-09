@@ -2,10 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 export class Weather extends React.Component {
-  // componentDidMount() {
-  //    this.props.dispatch(fetchWeathers())
-  // this.props.dispatch(fetchBackground()
-  // }
+
 
   weatherCategory = () => {
 
@@ -23,7 +20,7 @@ export class Weather extends React.Component {
     return (
       <>
         <div className='centered'>
-          <h3>hi{conditionToday}</h3>
+          {/* <h3>hi{conditionToday}</h3> */}
         </div>
       </>
     )

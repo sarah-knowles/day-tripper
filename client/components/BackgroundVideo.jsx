@@ -7,6 +7,7 @@ export class BackgroundVideo extends React.Component {
   componentDidMount() {
     console.log(this.props)
     this.updateWeather()
+
   }
 
   componentDidUpdate(previousProps) {
@@ -35,7 +36,8 @@ export class BackgroundVideo extends React.Component {
 
   //Videos
   assignCondition = (weatherToday) => {
-    if (weatherToday == 'hc' || weatherToday == 's') {
+    console.log(weatherToday)
+    if (weatherToday == 'hc' || weatherToday == 's' || weatherToday == 'lr') {
       return 'cloudy'
     } else if (weatherToday == 'lc' || weatherToday == 'c') {
       return 'sunny'
@@ -57,18 +59,13 @@ export class BackgroundVideo extends React.Component {
   render() {
     const conditionToday = this.assignCondition(this.props.weatherToday)
     const videoToday = this.assignVideo(conditionToday)
-    console.log(this.props.weatherToday)
-
     return (
       <div className={classes.Container} >
-        <video autoPlay="autoplay" loop="loop" muted className={classes.Video} >
-          <source src={videoToday} type="video/mp4" />
-                    Your browser does not support the video tag.
-        </video>
-
+        <video src={videoToday} type="video/mp4" autoPlay="autoplay" loop="loop" muted className={classes.Video} />
         <div className={classes.Content}>
           <div className={classes.SubContent} >
-            <h1 style={{ marginTop: '-200px' }}>today is ...{this.props.weatherToday}</h1>
+            <h1 style={{ marginTop: '-200px' }}>today is ...</h1>
+            <h2>{conditionToday}</h2>
           </div>
         </div>
       </div>
